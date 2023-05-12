@@ -1,38 +1,206 @@
-.App {
-  text-align: center;
+.sidebar__nav-list::after {
+  content: "";
+  height: 1px;
+  width: 187px;
+  display: block;
+  background-color: rgb(139, 140, 141);
+  z-index: 2;
+  margin: 0px auto;
+  margin-top: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::selection {
+  background-color: transparent;
+  color: rgb(9, 252, 240);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.row-songs {
+  border-bottom: 0.8px solid #393939;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.row-songs>td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.row-songs>td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
+/* .row-songs{
+  border-bottom: 1px solid black;
+} */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.list-selection>li {
+  min-width: 100px;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+.wrapper-playing-music {
+  background-color: rgb(28, 65, 80) !important;
+}
+
+.playing-music {
+  background-color: transparent !important;
+  height: 6rem;
+  color: white !important;
+}
+
+.rhap_time {
+  color: white !important;
+}
+
+.spin {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+
+  100% {
     transform: rotate(360deg);
   }
 }
+
+.list-selection li {
+  transition: transparent 5s ease;
+}
+
+.list-selection li.selected {
+  background-color: #4299e1;
+}
+
+.slick-prev:before {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding-right:100%;
+  width: 50px !important;
+  height: 50px;
+  content: "《" !important;
+  border-radius: 100% !important;
+  margin-top:-300%;
+}
+.slick-next:before {
+  margin-top:-300%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding-left:100%;
+  width: 50px !important;
+  height: 50px;
+  border-radius: 100%  !important;
+  content: "》" !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px !important;
+
+}
+
+.slick-list {
+  margin-left: 40px !important;
+  margin-right: 20px !important;
+}
+
+.box-image-playlist{
+  max-width: 220px !important;
+  max-height: 220px !important;
+  overflow: hidden !important;
+  border-radius:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-image-mv{
+  max-width: 340px !important;
+  max-height: 340px !important;
+  overflow: hidden !important;
+  border-radius:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-image-artist:hover .slide-img-artist,
+.box-image-mv:hover .slide-img-mv,
+.box-image-playlist:hover .slide-img-playlist{
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: all 0.5s ease-in-out;
+  filter: blur(1px);
+  opacity: 0.5;
+}
+
+.box-image-artist:hover .hint-action-artist,
+.box-image-mv:hover  .hint-action-playlist,
+.box-image-playlist:hover .hint-action-playlist{
+  display: flex;
+  transition: all 0.5s ease-in-out;
+}
+.hint-action-playlist{
+  position: absolute;
+}
+
+.hint-action-artist > .bi-caret-right-fill::before,
+.hint-action-playlist>.bi-caret-right-fill::before{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius:100%;
+  border: 2px solid white;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.box-image-artist{
+  max-width: 200px !important;
+  max-height: 200px !important;
+  overflow: hidden !important;
+  border-radius:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.box-playlist>div{
+  max-width: 260px;
+  min-width: 260px;
+  padding: 20px;
+}
+
+.box-MVs>div{
+  max-width: 400px;
+  min-width: 400px;
+  padding: 20px;
+}
+
+.box-Artists>div{
+  max-width: 220px;
+  min-width: 220px;
+  padding: 20px;
+}
+
+.box-image-auto {
+  max-width: 320px;
+  min-width: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
